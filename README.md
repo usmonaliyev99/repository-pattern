@@ -6,7 +6,7 @@ This repository helps to you that create interface, create repository class in [
 Install this package with composer
 
 ```bash
-  composer require usmonaliyev/repository-pattern
+composer require usmonaliyev/repository-pattern
 ```
     
 ## Using
