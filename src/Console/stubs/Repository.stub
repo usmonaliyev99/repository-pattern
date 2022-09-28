@@ -1,0 +1,9 @@
+<?php
+
+namespace App\Repositories;
+
+use App\Interfaces\{{NAME_INTERFACE}};
+
+class {{NAME_REPOSITORY}} implements {{NAME_INTERFACE}}
+{
+}
