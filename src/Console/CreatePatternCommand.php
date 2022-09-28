@@ -14,6 +14,7 @@ class CreatePatternCommand extends Command
     {
         $name = $this->argument("name");
 
+        $this->checkPath();
         $this->createInterface($name);
         $this->createRepository($name);
         $this->registerPattern($name);
