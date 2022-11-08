@@ -2,22 +2,28 @@
 
 namespace Usmonaliyev\RepositoryPattern\Console;
 
+use Illuminate\Support\Str;
 use Illuminate\Console\Command;
 
 class CreatePatternCommand extends Command
 {
-    protected $signature = "create:pattern {name}";
+    protected $signature = "make:pattern {name}";
 
-    protected $description = "Create interface and repository files.";
+    protected $description = "Create interface, repository, controller files.";
 
     public function handle()
     {
         $name = $this->argument("name");
+        $addingController = $this->ask("Do you want add controller (y/n)?");
 
         $this->checkPath();
         $this->createInterface($name);
         $this->createRepository($name);
         $this->registerPattern($name);
+
+        if ($addingController == "y" || $addingController == "Y" || $addingController == "yes") {
+            $this->createController($name);
+        }
 
         $this->error("🔄 Please restart your app.");
     }
@@ -61,6 +67,24 @@ class CreatePatternCommand extends Command
         file_put_contents(app_path("Repositories/" . $name . "Repository.php"), $repositoryTemplate);
 
         $this->info("✅ App/Repositories/" . $name . "Repository.php is created!");
+    }
+
+    public function createController($name)
+    {
+        $controllerTemplate = $this->getStub("Controller");
+
+        $controllerTemplate = str_replace([
+            "{{NAME_INTERFACE}}",
+            "{{NAME_CONTROLLER}}",
+            "{{VARIABLE_REPOSITORY}}",
+        ], [
+            $name . "Interface",
+            $name . "Controller",
+            Str::camel($name) . "Repository",
+        ], $controllerTemplate);
+
+        file_put_contents(app_path("Http/Controllers/" . $name . "Controller.php"), $controllerTemplate);
+        $this->info("✅ App/Http/Controllers/" . $name . "Controller.php is created!");
     }
 
     public function registerPattern(string $name)
