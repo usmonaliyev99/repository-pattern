@@ -1,25 +1,25 @@
 {
-    "name": "usmonaliyev/repository-pattern",
-    "autoload": {
-        "psr-4": {
-            "Usmonaliyev\\RepositoryPattern\\": "src/"
-        }
-    },
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Temur5319436",
-            "email": "temur5319436@gmail.com"
-        }
-    ],
-    "require": {
-        "php": "^7.4"
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Usmonaliyev\\RepositoryPattern\\RepositoryServiceProvider"
-            ]
-        }
+  "name": "usmonaliyev/repository-pattern",
+  "autoload": {
+    "psr-4": {
+      "Usmonaliyev\\RepositoryPattern\\": "src/"
     }
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Temur5319436",
+      "email": "temur5319436@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^7.4|^8"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Usmonaliyev\\RepositoryPattern\\RepositoryServiceProvider"
+      ]
+    }
+  }
 }
