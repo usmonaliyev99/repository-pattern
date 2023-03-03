@@ -55,7 +55,7 @@ class {{NAME_CONTROLLER}} extends Controller
 
     public function destroy($id)
     {
-        $data = $this->{{VARIABLE_REPOSITORY}}->destroy($request, $id);
+        $data = $this->{{VARIABLE_REPOSITORY}}->destroy($id);
 
         return response()->json([
             "message" => "OK",

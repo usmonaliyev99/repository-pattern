@@ -13,7 +13,7 @@ interface {{NAME_INTERFACE}}
 
   function show($id);
 
-  function update(Request $request);
+  function update(Request $request, $id);
 
   function destroy($id);
 }
