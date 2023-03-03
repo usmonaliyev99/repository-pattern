@@ -2,6 +2,18 @@
 
 namespace App\Interfaces;
 
+use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
+
 interface {{NAME_INTERFACE}}
 {
+  function index(Request $request);
+
+  function store(Request $request);
+
+  function show($id);
+
+  function update(Request $request);
+
+  function destroy($id);
 }

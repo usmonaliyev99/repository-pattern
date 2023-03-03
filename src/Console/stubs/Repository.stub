@@ -2,8 +2,33 @@
 
 namespace App\Repositories;
 
+use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
 use App\Interfaces\{{NAME_INTERFACE}};
 
 class {{NAME_REPOSITORY}} implements {{NAME_INTERFACE}}
 {
+  public function __constructor(
+  ) {
+  }
+
+  public function index(Request $request)
+  {
+  }
+
+  public function store(Request $request)
+  {
+  }
+
+  public function show($id)
+  {
+  }
+
+  public function update(Request $request, $id)
+  {
+  }
+
+  public function destroy($id)
+  {
+  }
 }

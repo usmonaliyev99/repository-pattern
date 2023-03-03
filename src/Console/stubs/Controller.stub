@@ -3,35 +3,63 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
 use App\Interfaces\{{NAME_INTERFACE}};
 
 class {{NAME_CONTROLLER}} extends Controller
 {
-    private {{NAME_INTERFACE}} ${{VARIABLE_REPOSITORY}};
-
     public function __construct(
-      {{NAME_INTERFACE}} ${{VARIABLE_REPOSITORY}}
+      private readonly {{NAME_INTERFACE}} ${{VARIABLE_REPOSITORY}}
     ) {
-      $this->{{VARIABLE_REPOSITORY}} = ${{VARIABLE_REPOSITORY}};
     }
 
-    public function index()
+    public function index(Request $request)
     {
+        $data = $this->{{VARIABLE_REPOSITORY}}->index($request);
+
+        return response()->json([
+            "message" => "OK",
+            "data" => $data
+        ], JsonResponse::HTTP_OK);
     }
 
     public function store(Request $request)
     {
+        $data = $this->{{VARIABLE_REPOSITORY}}->store($request);
+
+        return response()->json([
+            "message" => "OK",
+            "data" => $data
+        ], JsonResponse::HTTP_OK);
     }
 
     public function show($id)
     {
+        $data = $this->{{VARIABLE_REPOSITORY}}->show($id);
+
+        return response()->json([
+            "message" => "OK",
+            "data" => $data
+        ], JsonResponse::HTTP_OK);
     }
 
     public function update(Request $request, $id)
     {
+        $data = $this->{{VARIABLE_REPOSITORY}}->update($request, $id);
+
+        return response()->json([
+            "message" => "OK",
+            "data" => $data
+        ], JsonResponse::HTTP_OK);
     }
 
     public function destroy($id)
     {
+        $data = $this->{{VARIABLE_REPOSITORY}}->destroy($request, $id);
+
+        return response()->json([
+            "message" => "OK",
+            "data" => $data
+        ], JsonResponse::HTTP_OK);
     }
 }
