@@ -8,8 +8,8 @@ use App\Interfaces\{{NAME_INTERFACE}};
 
 class {{NAME_REPOSITORY}} implements {{NAME_INTERFACE}}
 {
-  public function __constructor(
-  ) {
+  public function __construct()
+  {
   }
 
   public function index(Request $request)

@@ -9,7 +9,7 @@ use App\Interfaces\{{NAME_INTERFACE}};
 class {{NAME_CONTROLLER}} extends Controller
 {
     public function __construct(
-      private readonly {{NAME_INTERFACE}} ${{VARIABLE_REPOSITORY}}
+        private readonly {{NAME_INTERFACE}} ${{VARIABLE_REPOSITORY}}
     ) {
     }
 
