@@ -14,6 +14,8 @@ class RepositoryServiceProvider extends ServiceProvider
                 CreatePatternCommand::class
             ]);
         }
+
+        $this->loadRoutesFrom(__DIR__ . '/routes/api.php');
     }
 
     public function register()
